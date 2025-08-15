@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Tags on Saqib Mir</title>
-    <link>http://localhost:1313/tags/</link>
+    <link>https://saqibmir1.github.io/outer-rim/tags/</link>
     <description>Recent content in Tags on Saqib Mir</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-gb</language>
-    <lastBuildDate>Sun, 21 Jan 2024 00:00:00 +0000</lastBuildDate><atom:link href="http://localhost:1313/tags/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 21 Jan 2024 00:00:00 +0000</lastBuildDate><atom:link href="https://saqibmir1.github.io/outer-rim/tags/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Arch-Linux</title>
-      <link>http://localhost:1313/tags/arch-linux/</link>
+      <link>https://saqibmir1.github.io/outer-rim/tags/arch-linux/</link>
       <pubDate>Sun, 21 Jan 2024 00:00:00 +0000</pubDate>
       
-      <guid>http://localhost:1313/tags/arch-linux/</guid>
+      <guid>https://saqibmir1.github.io/outer-rim/tags/arch-linux/</guid>
       
       <description></description>
       
@@ -20,10 +20,10 @@
     
     <item>
       <title>Automation</title>
-      <link>http://localhost:1313/tags/automation/</link>
+      <link>https://saqibmir1.github.io/outer-rim/tags/automation/</link>
       <pubDate>Sun, 21 Jan 2024 00:00:00 +0000</pubDate>
       
-      <guid>http://localhost:1313/tags/automation/</guid>
+      <guid>https://saqibmir1.github.io/outer-rim/tags/automation/</guid>
       
       <description></description>
       
@@ -31,10 +31,10 @@
     
     <item>
       <title>Hyperland</title>
-      <link>http://localhost:1313/tags/hyperland/</link>
+      <link>https://saqibmir1.github.io/outer-rim/tags/hyperland/</link>
       <pubDate>Sun, 21 Jan 2024 00:00:00 +0000</pubDate>
       
-      <guid>http://localhost:1313/tags/hyperland/</guid>
+      <guid>https://saqibmir1.github.io/outer-rim/tags/hyperland/</guid>
       
       <description></description>
       
@@ -42,10 +42,10 @@
     
     <item>
       <title>Linux</title>
-      <link>http://localhost:1313/tags/linux/</link>
+      <link>https://saqibmir1.github.io/outer-rim/tags/linux/</link>
       <pubDate>Sun, 21 Jan 2024 00:00:00 +0000</pubDate>
       
-      <guid>http://localhost:1313/tags/linux/</guid>
+      <guid>https://saqibmir1.github.io/outer-rim/tags/linux/</guid>
       
       <description></description>
       
@@ -53,10 +53,10 @@
     
     <item>
       <title>Scripts</title>
-      <link>http://localhost:1313/tags/scripts/</link>
+      <link>https://saqibmir1.github.io/outer-rim/tags/scripts/</link>
       <pubDate>Sun, 21 Jan 2024 00:00:00 +0000</pubDate>
       
-      <guid>http://localhost:1313/tags/scripts/</guid>
+      <guid>https://saqibmir1.github.io/outer-rim/tags/scripts/</guid>
       
       <description></description>
       

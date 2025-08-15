@@ -7,7 +7,7 @@ html {
 * {
     margin: 0;
     padding: 0;
-    cursor: url(https://cur.cursors-4u.net/others/oth-1/oth28.cur), auto !important;
+    cursor: url('../cursors/lightsaber.cur'), url('https://cur.cursors-4u.net/others/oth-1/oth28.cur'), auto !important;
     box-sizing: border-box;
 }
 

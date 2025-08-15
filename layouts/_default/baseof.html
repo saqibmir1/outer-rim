@@ -97,7 +97,7 @@
         
         function createAudio() {
             if (!audio) {
-                audio = new Audio('/audio/imperial.mp3');
+                audio = new Audio('{{ "audio/imperial.mp3" | absURL }}');
                 audio.loop = true;
                 audio.volume = 0.3;
                 
