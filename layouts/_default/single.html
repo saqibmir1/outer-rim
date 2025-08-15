@@ -1,0 +1,301 @@
+{{ define "main" }}
+<article class="star-wars-post">
+    <header class="post-header">
+        <h1 class="post-title">{{ .Title }}</h1>
+    </header>
+
+    <div class="post-content">
+        {{ .Content }}
+    </div>
+
+    <footer class="post-footer">
+        <div class="post-navigation">
+            {{ if .PrevInSection }}
+            <div class="nav-prev">
+                <a href="{{ .PrevInSection.Permalink }}" class="nav-link">
+                    <span class="nav-arrow">←</span>
+                    <span class="nav-text">{{ .PrevInSection.Title }}</span>
+                </a>
+            </div>
+            {{ end }}
+            
+            {{ if .NextInSection }}
+            <div class="nav-next">
+                <a href="{{ .NextInSection.Permalink }}" class="nav-link">
+                    <span class="nav-text">{{ .NextInSection.Title }}</span>
+                    <span class="nav-arrow">→</span>
+                </a>
+            </div>
+            {{ end }}
+        </div>
+    </footer>
+</article>
+
+<style>
+.star-wars-post {
+    max-width: 800px;
+    margin: 0 auto;
+    background: rgba(0, 0, 0, 0.9);
+    border: 2px solid #f5e235;
+    border-radius: 12px;
+    padding: 40px;
+    box-shadow: 0 0 30px rgba(245, 226, 53, 0.2);
+}
+
+.post-header {
+    text-align: center;
+    margin-bottom: 40px;
+    border-bottom: 1px solid #f5e235;
+    padding-bottom: 30px;
+}
+
+.post-title {
+    font-family: 'Star Wars', sans-serif;
+    font-size: 42px;
+    color: #f5e235;
+    text-shadow: 0 0 15px #f5e235;
+    margin-bottom: 20px;
+    line-height: 1.2;
+}
+
+.post-meta {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+    color: #cccccc;
+    font-family: 'Rastaglion', sans-serif;
+}
+
+.meta-item {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.meta-label {
+    color: #f5e235;
+    font-weight: bold;
+    font-size: 14px;
+}
+
+.post-tags {
+    display: flex;
+    gap: 5px;
+}
+
+.tag {
+    background: rgba(245, 226, 53, 0.2);
+    color: #f5e235;
+    padding: 4px 8px;
+    border-radius: 4px;
+    font-size: 12px;
+    border: 1px solid rgba(245, 226, 53, 0.3);
+}
+
+.category {
+    background: rgba(245, 226, 53, 0.1);
+    color: #f5e235;
+    padding: 4px 12px;
+    border-radius: 6px;
+    font-size: 12px;
+    border: 1px solid rgba(245, 226, 53, 0.3);
+}
+
+.post-content {
+    line-height: 1.8;
+    font-size: 16px;
+    color: #ffffff;
+    font-family: 'Rastaglion', sans-serif;
+}
+
+.post-content h1,
+.post-content h2,
+.post-content h3,
+.post-content h4,
+.post-content h5,
+.post-content h6 {
+    font-family: 'Star Wars', sans-serif;
+    color: #f5e235;
+    text-shadow: 0 0 8px #f5e235;
+    margin-top: 40px;
+    margin-bottom: 20px;
+}
+
+.post-content h2 {
+    font-size: 28px;
+    border-bottom: 2px solid rgba(245, 226, 53, 0.3);
+    padding-bottom: 10px;
+}
+
+.post-content h3 {
+    font-size: 24px;
+}
+
+.post-content h4 {
+    font-size: 20px;
+}
+
+.post-content p {
+    margin-bottom: 20px;
+    color: #ffffff;
+}
+
+.post-content a {
+    color: #f5e235;
+    text-decoration: none;
+    border-bottom: 1px solid rgba(245, 226, 53, 0.3);
+    transition: all 0.3s ease;
+}
+
+.post-content a:hover {
+    color: #ffffff;
+    border-bottom-color: #f5e235;
+    text-shadow: 0 0 5px #f5e235;
+}
+
+.post-content blockquote {
+    border-left: 4px solid #f5e235;
+    background: rgba(245, 226, 53, 0.1);
+    padding: 20px;
+    margin: 30px 0;
+    border-radius: 0 8px 8px 0;
+    font-style: italic;
+    color: #f5e235;
+}
+
+.post-content code {
+    background: rgba(245, 226, 53, 0.1);
+    color: #f5e235;
+    padding: 2px 6px;
+    border-radius: 4px;
+    font-family: 'Courier New', monospace;
+    font-size: 14px;
+}
+
+.post-content pre {
+    background: #1a1a1a;
+    border: 1px solid #f5e235;
+    border-radius: 8px;
+    padding: 20px;
+    overflow-x: auto;
+    margin: 30px 0;
+}
+
+.post-content pre code {
+    background: none;
+    padding: 0;
+    color: #ffffff;
+}
+
+.post-content ul,
+.post-content ol {
+    margin: 20px 0;
+    padding-left: 30px;
+}
+
+.post-content li {
+    margin-bottom: 8px;
+    color: #ffffff;
+}
+
+.post-content img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;
+    margin: 30px 0;
+    box-shadow: 0 0 20px rgba(245, 226, 53, 0.3);
+}
+
+.post-footer {
+    margin-top: 50px;
+    border-top: 1px solid rgba(245, 226, 53, 0.3);
+    padding-top: 30px;
+}
+
+.post-navigation {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+}
+
+.nav-prev,
+.nav-next {
+    flex: 1;
+}
+
+.nav-next {
+    text-align: right;
+}
+
+.nav-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    color: #f5e235;
+    text-decoration: none;
+    padding: 15px 20px;
+    border: 1px solid rgba(245, 226, 53, 0.3);
+    border-radius: 8px;
+    transition: all 0.3s ease;
+    font-family: 'Rastaglion', sans-serif;
+    max-width: 250px;
+}
+
+.nav-link:hover {
+    background: rgba(245, 226, 53, 0.1);
+    border-color: #f5e235;
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(245, 226, 53, 0.2);
+}
+
+.nav-arrow {
+    font-size: 18px;
+    color: #f5e235;
+}
+
+.nav-text {
+    font-size: 14px;
+    line-height: 1.4;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+@media (max-width: 768px) {
+    .star-wars-post {
+        padding: 20px;
+        margin: 10px;
+    }
+    
+    .post-title {
+        font-size: 28px;
+    }
+    
+    .post-meta {
+        flex-direction: column;
+        gap: 10px;
+    }
+    
+    .meta-item {
+        flex-direction: column;
+        gap: 5px;
+        text-align: center;
+    }
+    
+    .post-navigation {
+        flex-direction: column;
+    }
+    
+    .nav-next {
+        text-align: left;
+    }
+    
+    .nav-link {
+        max-width: 100%;
+        justify-content: center;
+    }
+}
+</style>
+{{ end }}

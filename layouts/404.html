@@ -1,0 +1,245 @@
+{{ define "main" }}
+<div class="star-wars-404">
+    <div class="error-container">
+        <div class="error-code">404</div>
+        <div class="error-title">The Archive You Seek...</div>
+        <div class="error-subtitle">...Has Been Lost to the Dark Side</div>
+        
+        <div class="error-message">
+            <p>These are not the pages you're looking for.</p>
+            <p>The transmission you requested has been corrupted by Imperial interference or lost in the vast emptiness of cyberspace.</p>
+        </div>
+        
+        <div class="error-actions">
+            <a href="{{ .Site.Home.Permalink }}" class="home-link">
+                <span>Return to Base</span>
+                <span class="home-arrow">🏠</span>
+            </a>
+            <a href="/posts/" class="posts-link">
+                <span>Browse Transmissions</span>
+                <span class="posts-arrow">📡</span>
+            </a>
+        </div>
+        
+        <div class="error-quote">
+            <p>"Your lack of navigation disturbs me."</p>
+            <cite>- Darth Vader, probably</cite>
+        </div>
+    </div>
+</div>
+
+<style>
+.star-wars-404 {
+    min-height: 70vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 40px 20px;
+}
+
+.error-container {
+    text-align: center;
+    max-width: 600px;
+    background: rgba(0, 0, 0, 0.9);
+    border: 2px solid #f5e235;
+    border-radius: 12px;
+    padding: 50px 40px;
+    box-shadow: 0 0 50px rgba(245, 226, 53, 0.3);
+    position: relative;
+    overflow: hidden;
+}
+
+.error-container::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 2px;
+    background: linear-gradient(90deg, transparent, #f5e235, transparent);
+    animation: scan 3s linear infinite;
+}
+
+@keyframes scan {
+    0% { left: -100%; }
+    100% { left: 100%; }
+}
+
+.error-code {
+    font-family: 'Star Wars', sans-serif;
+    font-size: 120px;
+    color: #f5e235;
+    text-shadow: 
+        0 0 20px #f5e235,
+        0 0 40px #f5e235,
+        0 0 60px #f5e235;
+    margin-bottom: 20px;
+    line-height: 1;
+    animation: glow 2s ease-in-out infinite alternate;
+}
+
+@keyframes glow {
+    from {
+        text-shadow: 
+            0 0 20px #f5e235,
+            0 0 40px #f5e235,
+            0 0 60px #f5e235;
+    }
+    to {
+        text-shadow: 
+            0 0 30px #f5e235,
+            0 0 60px #f5e235,
+            0 0 90px #f5e235;
+    }
+}
+
+.error-title {
+    font-family: 'Star Wars', sans-serif;
+    font-size: 36px;
+    color: #f5e235;
+    text-shadow: 0 0 10px #f5e235;
+    margin-bottom: 10px;
+}
+
+.error-subtitle {
+    font-family: 'Star Wars', sans-serif;
+    font-size: 24px;
+    color: #ffffff;
+    margin-bottom: 30px;
+    opacity: 0.9;
+}
+
+.error-message {
+    font-family: 'Rastaglion', sans-serif;
+    color: #ffffff;
+    font-size: 16px;
+    line-height: 1.6;
+    margin-bottom: 40px;
+}
+
+.error-message p {
+    margin-bottom: 15px;
+}
+
+.error-actions {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+    margin-bottom: 40px;
+    flex-wrap: wrap;
+}
+
+.home-link,
+.posts-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    padding: 15px 25px;
+    background: rgba(245, 226, 53, 0.1);
+    border: 2px solid #f5e235;
+    border-radius: 8px;
+    color: #f5e235;
+    text-decoration: none;
+    font-family: 'Rastaglion', sans-serif;
+    font-weight: bold;
+    transition: all 0.3s ease;
+    min-width: 200px;
+    justify-content: center;
+}
+
+.home-link:hover,
+.posts-link:hover {
+    background: rgba(245, 226, 53, 0.2);
+    color: #ffffff;
+    transform: translateY(-3px);
+    box-shadow: 0 10px 25px rgba(245, 226, 53, 0.3);
+}
+
+.home-arrow,
+.posts-arrow {
+    font-size: 18px;
+    transition: transform 0.3s ease;
+}
+
+.home-link:hover .home-arrow,
+.posts-link:hover .posts-arrow {
+    transform: scale(1.2);
+}
+
+.error-quote {
+    border-top: 1px solid rgba(245, 226, 53, 0.3);
+    padding-top: 30px;
+    font-family: 'Rastaglion', sans-serif;
+    font-style: italic;
+    color: #cccccc;
+}
+
+.error-quote p {
+    font-size: 18px;
+    margin-bottom: 10px;
+    color: #f5e235;
+}
+
+.error-quote cite {
+    font-size: 14px;
+    opacity: 0.7;
+}
+
+@media (max-width: 768px) {
+    .error-container {
+        padding: 40px 30px;
+        margin: 20px;
+    }
+    
+    .error-code {
+        font-size: 80px;
+    }
+    
+    .error-title {
+        font-size: 28px;
+    }
+    
+    .error-subtitle {
+        font-size: 20px;
+    }
+    
+    .error-actions {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .home-link,
+    .posts-link {
+        min-width: 250px;
+    }
+}
+
+@media (max-width: 480px) {
+    .error-container {
+        padding: 30px 20px;
+    }
+    
+    .error-code {
+        font-size: 60px;
+    }
+    
+    .error-title {
+        font-size: 24px;
+    }
+    
+    .error-subtitle {
+        font-size: 18px;
+    }
+    
+    .error-message {
+        font-size: 15px;
+    }
+    
+    .home-link,
+    .posts-link {
+        min-width: 200px;
+        padding: 12px 20px;
+    }
+}
+</style>
+{{ end }}

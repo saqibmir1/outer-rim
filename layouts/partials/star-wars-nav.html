@@ -1,0 +1,62 @@
+<!-- Star Wars Navigation -->
+<div class="star-wars-navbar-wrapper">
+    <nav class="star-wars-navbar" id="main-navbar">
+        <div class="nav-container">
+            <!-- Home Button (Desktop Only) -->
+            <a class="star-wars-nav-btn home-btn btn btn-outline-warning d-none d-lg-flex" href="{{ .Site.Home.Permalink }}">
+                <i class="fas fa-home"></i>
+                <span class="home-text">Command Center</span>
+            </a>
+            
+            <!-- Desktop Navigation (Center) -->
+            <div class="nav-center d-none d-lg-flex">
+                {{ $currentPage := . }}
+                {{ range .Site.Menus.main }}
+                <a class="star-wars-nav-btn btn btn-outline-warning {{ if or ($currentPage.IsMenuCurrent "main" .) ($currentPage.HasMenuCurrent "main" .) }}active{{ end }}" 
+                   href="{{ .URL }}">
+                    {{ if eq .Name "Transmissions" }}<i class="fas fa-satellite-dish"></i>
+                    {{ else if eq .Name "Arsenal" }}<i class="fas fa-tools"></i>
+                    {{ else if eq .Name "Rebel Profile" }}<i class="fas fa-user-secret"></i>
+                    {{ else if eq .Name "Holo-Contact" }}<i class="fas fa-broadcast-tower"></i>
+                    {{ else if eq .Name "Hyperspace Links" }}<i class="fas fa-external-link-alt"></i>
+                    {{ else if eq .Name "Cantina Chat" }}<i class="fas fa-comments"></i>
+                    {{ else }}<i class="fas fa-star"></i>{{ end }}
+                    {{ .Name }}
+                </a>
+                {{ end }}
+            </div>
+            
+            <!-- Spacer for desktop layout -->
+            <div class="d-none d-lg-block" style="width: 150px;"></div>
+        </div>
+    </nav>
+</div>
+
+<!-- Mobile Navigation (Simplified) -->
+<div class="d-lg-none star-wars-mobile-nav" id="mobileNav">
+    <div class="container">
+        <div class="dropdown">
+            <button class="btn btn-secondary dropdown-toggle w-100" type="button" data-bs-toggle="dropdown" 
+                    aria-expanded="false">
+                <i class="fas fa-satellite"></i> Navigation Array
+            </button>
+            <ul class="dropdown-menu star-wars-dropdown w-100">
+                <li><a class="dropdown-item" href="{{ .Site.Home.Permalink }}">
+                    <i class="fas fa-home"></i> Command Center
+                </a></li>
+                {{ range .Site.Menus.main }}
+                <li><a class="dropdown-item" href="{{ .URL }}">
+                    {{ if eq .Name "Transmissions" }}<i class="fas fa-satellite-dish"></i>
+                    {{ else if eq .Name "Arsenal" }}<i class="fas fa-tools"></i>
+                    {{ else if eq .Name "Rebel Profile" }}<i class="fas fa-user-secret"></i>
+                    {{ else if eq .Name "Holo-Contact" }}<i class="fas fa-broadcast-tower"></i>
+                    {{ else if eq .Name "Hyperspace Links" }}<i class="fas fa-external-link-alt"></i>
+                    {{ else if eq .Name "Cantina Chat" }}<i class="fas fa-comments"></i>
+                    {{ else }}<i class="fas fa-star"></i>{{ end }}
+                    {{ .Name }}
+                </a></li>
+                {{ end }}
+            </ul>
+        </div>
+    </div>
+</div>
